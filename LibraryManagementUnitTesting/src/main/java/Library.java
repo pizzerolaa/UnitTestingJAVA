@@ -16,7 +16,11 @@ public class Library {
     }  
   
     public void addBook(Book book) {  
-        books.add(book);  
+        if (!books.contains(book)) {  
+            books.add(book);  
+        } else {  
+            System.out.println("Book already exists in the library."); 
+        }
     }  
   
     public void removeBook(Book book) {  

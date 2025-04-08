@@ -1,4 +1,5 @@
 import java.time.LocalDate;  
+import java.util.Objects;
   
 public class Book {  
     private String title;  
@@ -44,6 +45,18 @@ public class Book {
         } else {  
             throw new IllegalStateException("Cannot set due date for a book that is not checked out.");  
         }  
-    }  
+    }
+
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return Objects.equals(title, book.title) && 
+               Objects.equals(author, book.author);
+    }
+
+    public int hashCode() {
+        return Objects.hash(title, author);
+    }
 
 }  
