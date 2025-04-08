@@ -56,7 +56,7 @@ public class Library {
             LocalDate today = LocalDate.now();  
             long daysOverdue = ChronoUnit.DAYS.between(book.getDueDate(), today);  
             if (daysOverdue > 0) {  
-                return daysOverdue * 0.50; // $0.50 fine per day overdue  
+                return daysOverdue * 1.00; // $0.50 fine per day overdue  
             }  
         }  
         return 0.0;  
