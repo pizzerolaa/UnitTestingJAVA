@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="LibraryTest" time="0.114" tests="10" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="LibraryTest" time="0.111" tests="12" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -16,7 +16,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-17.0.14.7-hotspot\bin"/>
-    <property name="sun.java.command" value="C:\Users\ferna\AppData\Local\Temp\surefire6340963308590915063\surefirebooter-20250408112931600_3.jar C:\Users\ferna\AppData\Local\Temp\surefire6340963308590915063 2025-04-08T11-29-31_421-jvmRun1 surefire-20250408112931600_1tmp surefire_0-20250408112931600_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\ferna\AppData\Local\Temp\surefire3370459544583487782\surefirebooter-20250412233320856_3.jar C:\Users\ferna\AppData\Local\Temp\surefire3370459544583487782 2025-04-12T23-33-20_662-jvmRun1 surefire-20250412233320856_1tmp surefire_0-20250412233320856_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\ferna\Documents\UnitTestingJAVA\LibraryManagementUnitTesting\target\test-classes;C:\Users\ferna\Documents\UnitTestingJAVA\LibraryManagementUnitTesting\target\classes;C:\Users\ferna\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\ferna\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\ferna\.m2\repository\org\junit\jupiter\junit-jupiter\5.10.0\junit-jupiter-5.10.0.jar;C:\Users\ferna\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.0\junit-jupiter-api-5.10.0.jar;C:\Users\ferna\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\ferna\.m2\repository\org\junit\platform\junit-platform-commons\1.10.0\junit-platform-commons-1.10.0.jar;C:\Users\ferna\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\ferna\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.0\junit-jupiter-params-5.10.0.jar;C:\Users\ferna\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.0\junit-jupiter-engine-5.10.0.jar;C:\Users\ferna\.m2\repository\org\junit\platform\junit-platform-engine\1.10.0\junit-platform-engine-1.10.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -31,7 +31,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\ferna\AppData\Local\Temp\surefire6340963308590915063\surefirebooter-20250408112931600_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\ferna\AppData\Local\Temp\surefire3370459544583487782\surefirebooter-20250412233320856_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.14+7"/>
@@ -60,17 +60,42 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="testRegisterPatron" classname="LibraryTest" time="0.052"/>
-  <testcase name="testListBooksAndPatrons" classname="LibraryTest" time="0.005"/>
-  <testcase name="testAddBook" classname="LibraryTest" time="0.003"/>
+  <testcase name="testRegisterPatron" classname="LibraryTest" time="0.036"/>
+  <testcase name="testListBooksAndPatrons" classname="LibraryTest" time="0.0"/>
+  <testcase name="testAddBook" classname="LibraryTest" time="0.001"/>
   <testcase name="testReturnNonCheckedOutBook" classname="LibraryTest" time="0.0"/>
-  <testcase name="testCheckOutNonexistentBook" classname="LibraryTest" time="0.0"/>
-  <testcase name="testAddBookWithError" classname="LibraryTest" time="0.006">
+  <testcase name="testCheckOutNonexistentBook" classname="LibraryTest" time="0.005">
+    <system-out><![CDATA[Book not available in the library: Nonexistent
+]]></system-out>
+  </testcase>
+  <testcase name="testAddBookWithError" classname="LibraryTest" time="0.002">
     <system-out><![CDATA[Book already exists in the library.
 ]]></system-out>
   </testcase>
-  <testcase name="testCalculateFineAfterReturn" classname="LibraryTest" time="0.014"/>
-  <testcase name="testBookCreated" classname="LibraryTest" time="0.002"/>
-  <testcase name="testCalculateFine" classname="LibraryTest" time="0.0"/>
-  <testcase name="testCheckoutUnavailableBook" classname="LibraryTest" time="0.0"/>
+  <testcase name="testCalculateFineAfterReturn" classname="LibraryTest" time="0.014">
+    <system-out><![CDATA[Book checked out: Design Patterns to Alice Smith
+]]></system-out>
+  </testcase>
+  <testcase name="testBookCreated" classname="LibraryTest" time="0.003"/>
+  <testcase name="testConcurrentBookCheckout" classname="LibraryTest" time="0.005">
+    <system-out><![CDATA[Book checked out: Concurrent Programming to User 1
+Book already checked out: Concurrent Programming
+]]></system-out>
+  </testcase>
+  <testcase name="testCalculateFine" classname="LibraryTest" time="0.001">
+    <system-out><![CDATA[Book checked out: Overdue Book to Late Patron
+]]></system-out>
+  </testcase>
+  <testcase name="testWaitingListFunctionality" classname="LibraryTest" time="0.0">
+    <system-out><![CDATA[Book checked out: Popular Book to User 1
+User 2 added to waiting list for Popular Book
+User 3 added to waiting list for Popular Book
+Book checked out: Popular Book to User 2
+]]></system-out>
+  </testcase>
+  <testcase name="testCheckoutUnavailableBook" classname="LibraryTest" time="0.0">
+    <system-out><![CDATA[Book checked out: 1984 to User A
+Book already checked out: 1984
+]]></system-out>
+  </testcase>
 </testsuite>

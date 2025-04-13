@@ -142,4 +142,46 @@ public class LibraryTest {
         double fineAfterReturn = library.calculateFine(patron);
         assertEquals(0, fineAfterReturn, "The fine should be zero after returning the book.");
     }
+
+    @Test
+    public void testConcurrentBookCheckout() throws InterruptedException {
+        Library library = new Library();
+        Book book = new Book("Concurrent Programming", "Doug Lea");
+        library.addBook(book);
+
+        Patron patron1 = new Patron("User 1");
+        Patron patron2 = new Patron("User 2");
+        library.addPatron(patron1);
+        library.addPatron(patron2);
+
+        Thread t1 = new Thread(() -> library.checkOutBook(patron1, book, 3));
+        Thread t2 = new Thread(() -> library.checkOutBook(patron2, book, 3));
+
+        t1.start();
+        t2.start();
+
+        t1.join();
+        t2.join();
+
+        assertEquals(1, library.getCheckedOutBooks().size());
+    }
+
+    @Test
+    public void testWaitingListFunctionality() throws InterruptedException {
+        Library library = new Library();
+        Book book = new Book("Popular Book", "Famous Author");
+        library.addBook(book);
+
+        Patron patron1 = new Patron("User 1", library);
+        Patron patron2 = new Patron("User 2", library);
+        Patron patron3 = new Patron("User 3", library);
+
+        library.checkOutBook(patron1, book, 3);
+        library.addToWaitingList(patron2, book);
+        library.addToWaitingList(patron3, book);
+
+        library.returnBook(patron1);
+        
+        assertTrue(library.checkOutBook(patron2, book, 3));
+    }
 }
